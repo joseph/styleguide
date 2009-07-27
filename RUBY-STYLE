@@ -3,10 +3,20 @@
 You may not like all rules presented here, but they work very well for
 me and have helped producing high quality code.  Everyone is free to
 code however they want, write and follow their own style guides, but
-when you contribute to my code, please follow these rules:
+when you contribute to my code, please follow these rules.
+
+
+== Modifications by Joseph Pearson (Inventive Labs)
+
+These modifications reflect the practices at Inventive Labs, and are NOT
+intended as a suggested patch to the (excellent) original. Of course, we do
+think these changes make sense, so feel free to adopt them. When contributing
+to Labs' projects, things will go much more smoothly if you follow these rules.
 
 
 == Formatting:
+
+* Keep lines fewer than 80 characters.
 
 * Use ASCII (or UTF-8, if you have to).
 
@@ -25,14 +35,31 @@ when you contribute to my code, please follow these rules:
 * Indent when as deep as case.
 
 * Use an empty line before the return value of a method (unless it
-  only has one line), and an empty line between defs.
+  only has one line).
+
+* Two empty lines between method definitions. Three empty lines between class
+  or module definitions where multiple classes/modules in same file.
+
+* One empty line after private/protected/public, and indent method definitions
+  under these modifiers.
+
+* When a hash is supplied at the end of the argument list in a method call,
+  don't wrap in {...}.
+
+* If method arguments exceed line length, place each argument on a separate
+  line (and treat each pair in final hash as an argument).
+
+* Indent multiline arguments by one level only -- never align arguments to
+  the opening parenthesis. (This also applies to assigning a series of
+  values to variables or hash keys. Never attempt to align anything by
+  column to something in the previous or next line.)
 
 * Use RDoc and its conventions for API documentation.  Don't put an
   empty line between the comment block and the def.
 
 * Use empty lines to break up a long method into logical paragraphs.
 
-* Keep lines fewer than 80 characters.
+* Keep lines fewer than 80 characters (rule repeated for emphasis!).
 
 * Avoid trailing whitespace.
 
@@ -51,14 +78,10 @@ when you contribute to my code, please follow these rules:
   of thumb: If you have to use outer parentheses, you are using the
   wrong operators.)
 
-* Avoid multiline ?:, use if.
+* Only use multi-line ?: in the argument list to a method call, and keep
+  it simple. In all other cases, use an if block.
 
-* Suppress superfluous parentheses when calling methods, but keep them
-  when calling "functions", i.e. when you use the return value in the
-  same line.
-
-    x = Math.sin(y)
-    array.delete e
+* Always wrap the argument list to a method call in parentheses.
 
 * Prefer {...} over do...end.  Multiline {...} is fine: having
   different statement endings (} for blocks, end for if/while/...)
@@ -85,7 +108,7 @@ when you contribute to my code, please follow these rules:
 * Use snake_case for methods.
 
 * Use CamelCase for classes and modules.  (Keep acronyms like HTTP,
-  RFC, XML uppercase.)
+  RFC, XML uppercase, except where this breaks Rails' autoloading.)
 
 * Use SCREAMING_SNAKE_CASE for other constants.
 
@@ -118,13 +141,13 @@ when you contribute to my code, please follow these rules:
 
 * When defining binary operators, name the argument "other".
 
-* Prefer map over collect, find over detect, find_all over select.
+* Prefer collect over map, detect over find, select over find_all.
 
 
 == Comments:
 
 * Comments longer than a word are capitalized and use punctuation.
-  Use two spaces after periods.
+  Use one space after periods.
 
 * Avoid superfluous comments.
 
