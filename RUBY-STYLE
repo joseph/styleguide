@@ -6,12 +6,11 @@ code however they want, write and follow their own style guides, but
 when you contribute to my code, please follow these rules.
 
 
-== Modifications by Joseph Pearson (Inventive Labs)
+== Modifications by Joseph Pearson (Booki.sh)
 
-These modifications reflect the practices at Inventive Labs, and are NOT
+These modifications reflect the practices here at Booki.sh, and are NOT
 intended as a suggested patch to the (excellent) original. Of course, we do
-think these changes make sense, so feel free to adopt them. When contributing
-to Labs' projects, things will go much more smoothly if you follow these rules.
+think these changes make sense, so feel free to adopt them.
 
 
 == Formatting:
@@ -101,6 +100,9 @@ to Labs' projects, things will go much more smoothly if you follow these rules.
 
 * Use non-OO regexps (they won't make the code better).  Freely use
   =~, $0-9, $~, $` and $' when needed.
+
+* Prefer Ruby 1.8-compatible syntax. Hash assignments should use the 
+  hashrocket (=>),  not the colon.
 
 
 == Naming:
